@@ -1,28 +1,24 @@
-import { Outlet } from "react-router-dom"
-import Navbar from "../components/Navbar"
-import { Grid, GridItem } from "@chakra-ui/react"
-import Sidebar from "../components/Sidebar"
+import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import { Grid, GridItem } from "@chakra-ui/react";
+import Sidebar from "../components/Sidebar";
 
 export default function RootLayout() {
   return (
     <Grid templateColumns="repeat(6,1fr)">
       <GridItem
-      as='aside'
-      colSpan={{base:6,lg:2, xl:1}}
-      height={{lg:'100vh'}}
-      bg='purple.500'
-      p={{base:'20px', lg:'30px'}}
+        as="aside"
+        colSpan={{ base: 6, lg: 2, xl: 1 }}
+        height={{ lg: "100vh" }}
+        bg="gray.800"
+        p={{ base: "20px", lg: "30px" }}
       >
-     <Sidebar/>
-
+        <Sidebar />
       </GridItem>
-      <GridItem 
-      as='main'
-      p='30px'
-      colSpan={{base:6,lg:4,xl:5}}>
-        <Navbar/>
+      <GridItem as="main" p="30px" colSpan={{ base: 6, lg: 4, xl: 5 }}>
+        <Navbar />
         <Outlet />
       </GridItem>
     </Grid>
-  )
+  );
 }
